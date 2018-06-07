@@ -4,6 +4,12 @@
   <parameter name="VendorName" value="Vasim5"/>
   <test thread-count="5" verbose="0" name="Test(failed)">
     <classes>
+      <class name="Distology.VendorNavigate">
+        <methods>
+          <include name="vendorNavigate"/>
+          <include name="getVendor"/>
+        </methods>
+      </class> <!-- Distology.VendorNavigate -->
       <class name="Distology.AddLicense">
         <methods>
           <include name="addMasterLicense"/>

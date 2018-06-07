@@ -5,6 +5,10 @@ import org.openqa.selenium.WebDriver;
 
 public class CustomerPage {
 	WebDriver driver;
+	
+	public CustomerPage(WebDriver driver){
+		this.driver=driver;
+	}
 	By icon=By.cssSelector("#menu_toggle");
 	
 	By customerTab=By.xpath("//ul[@class='nav side-menu']/li[7]");
@@ -15,9 +19,7 @@ public class CustomerPage {
 	
 	By pageTitle=By.xpath("//div[@class='breadcrumb-wrapper']/div/h4");
 	
-	public CustomerPage(WebDriver driver){
-		this.driver=driver;
-	}
+
 	
 	public By openPanel() {
 		return icon;
