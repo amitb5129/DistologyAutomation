@@ -7,7 +7,7 @@
 <classes>
 <class name="Distology.customerNavigate"/>
 <class name="Distology.VendorNavigate"/>
-<class name="Distology.CustomerData"/>
+<class name="Distology.Customerdata"/>
 <class name="Distology.AddPlatform"/>
 <class name="Distology.AddLicense"/>
 </classes>

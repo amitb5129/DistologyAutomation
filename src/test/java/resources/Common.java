@@ -75,7 +75,6 @@ public class Common{
 	}
 
 	public static Object[][] data(String filename, String sheetName) throws IOException {
-		int ci = 0, cj = 0;
 
 		File file = new File(filename);
 
@@ -94,14 +93,14 @@ public class Common{
 		String tab[][] = new String[totalrow][totalcol];
 
 		for (int i = totalrow-1; i <=totalrow-1 ; i++) {
-			cj = 0;
-			for (int j = 0; j < totalcol; j++,cj++) {
+			
+			for (int j = 0; j < totalcol; j++) {
 				Cell cell = sheet.getRow(i).getCell(j);
 				CellType type = cell.getCellTypeEnum();
 				if (type == CellType.NUMERIC) {
 					cell.setCellType(CellType.STRING);
 				}
-				tab[ci][cj] = cell.getStringCellValue();
+				tab[0][j] = cell.getStringCellValue();
 
 			}
 		}
@@ -125,7 +124,7 @@ public class Common{
 
 		Iterator<Cell> itr;
 
-		Faker df = new Faker();
+		DataFactory df = new DataFactory();
 		Random r=new Random();
 
 		switch (sheetName) {
@@ -144,14 +143,14 @@ public class Common{
 			
 			// Iterating through all the Cells in the Last Row.
 			itr = row.cellIterator();
-			itr.next().setCellValue(df.name());
-			itr.next().setCellValue(df.sentence(5));
-			itr.next().setCellValue(df.name());
-			itr.next().setCellValue(df.phoneNumber());
-			itr.next().setCellValue(df.name());
-			itr.next().setCellValue(df.firstName());
-			itr.next().setCellValue(df.lastName());
-			itr.next().setCellValue(df.lastName()+"@gamil.com");
+			itr.next().setCellValue(df.getName());
+			itr.next().setCellValue(df.getRandomChars(5));
+			itr.next().setCellValue(df.getName());
+			itr.next().setCellValue(df.getNumberText(10));
+			itr.next().setCellValue(df.getName());
+			itr.next().setCellValue(df.getFirstName());
+			itr.next().setCellValue(df.getLastName());
+			itr.next().setCellValue(df.getLastName()+"@gamil.com");
 			break;
 		case "Platform":
 			rowhead=sheet.createRow(totalrow+1);
@@ -164,8 +163,9 @@ public class Common{
 			
 			Row row1=sheet.getRow(use1);
 			itr=row1.cellIterator();
-			itr.next().setCellValue(df.name());
+			itr.next().setCellValue(df.getName());
 			itr.next().setCellValue("Microsoft");
+			break;
 		}
 		input.close();
 		FileOutputStream output = new FileOutputStream(file);

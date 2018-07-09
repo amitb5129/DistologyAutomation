@@ -20,7 +20,7 @@ import resources.Common;
 public class Customerdata extends LoginTest {
 
 	
-	String filename = "C:\\Users\\amitb\\TestNG\\Data\\Distology.xlsx";
+	String filename = "C:\\Users\\amitb\\Documents\\Distology.xlsx";
 	String sheetName = "CustomerData";
 	ArrayList<String> customer;
 	Iterator it;
@@ -111,6 +111,7 @@ public class Customerdata extends LoginTest {
 	@DataProvider(name = "CustomerData")
 	public Object[][] getdata() throws IOException {
 		Object[][] tab = Common.data(filename, sheetName);
+		System.out.println(tab.length);
 		return tab;
 	}
 
