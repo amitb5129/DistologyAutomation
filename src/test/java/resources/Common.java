@@ -85,17 +85,17 @@ public class Common{
 
 		XSSFSheet sheet = work.getSheet(sheetName);
 
-		int totalrow = sheet.getLastRowNum();
+		int totalrow = (sheet.getLastRowNum())+1;
 
-		int totalcol = sheet.getRow(1).getLastCellNum();
+		int totalcol = sheet.getRow(0).getLastCellNum();
 
-		System.out.println(totalrow + "The Total column count is:" + totalcol);
+		System.out.println(totalrow + " The Total column count is:" + totalcol);
 
 		String tab[][] = new String[totalrow][totalcol];
 
-		for (int i = totalrow; i <=totalrow ; i++,ci++) {
+		for (int i = totalrow-1; i <=totalrow-1 ; i++) {
 			cj = 0;
-			for (int j = 0; j < totalcol; j++, cj++) {
+			for (int j = 0; j < totalcol; j++,cj++) {
 				Cell cell = sheet.getRow(i).getCell(j);
 				CellType type = cell.getCellTypeEnum();
 				if (type == CellType.NUMERIC) {

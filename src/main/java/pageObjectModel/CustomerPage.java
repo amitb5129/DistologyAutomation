@@ -3,7 +3,7 @@ package pageObjectModel;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class CustomerPage{
+public class CustomerPage {
 	WebDriver driver;
 	
 	public CustomerPage(WebDriver driver){
