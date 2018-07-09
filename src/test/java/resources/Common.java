@@ -152,6 +152,7 @@ public class Common{
 			itr.next().setCellValue(df.firstName());
 			itr.next().setCellValue(df.lastName());
 			itr.next().setCellValue(df.lastName()+"@gamil.com");
+			break;
 		case "Platform":
 			rowhead=sheet.createRow(totalrow+1);
 			
