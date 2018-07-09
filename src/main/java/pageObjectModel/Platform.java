@@ -1,6 +1,8 @@
 package pageObjectModel;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -34,14 +36,14 @@ public class Platform extends MasterModuleComm {
 	}
 
 	// Enter Details of the Vendor in The pop-up
-	public void enterDetails() throws InterruptedException {
+	public void enterDetails(Iterator it) throws InterruptedException {
 		// The Platform Name has been hard Coded
 		// Need to Use again Apache POI for this Particular Feature.
-		driver.findElement(enterPlatform).sendKeys("NewPlatform");
-
+		driver.findElement(enterPlatform).sendKeys((String)it.next());
+		
 
 		// Calling the Common DropDown Method to actually Select a Vendor.
-		Common.dropDown(driver);
+		Common.dropDown(driver,"Microsoft");
 	}
 
 	public void clickModule() {

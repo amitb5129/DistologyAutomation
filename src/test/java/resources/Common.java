@@ -41,7 +41,7 @@ public class Common {
 		}
 	}
 
-	public static void dropDown(WebDriver driver) throws InterruptedException {
+	public static void dropDown(WebDriver driver,String VendorName) throws InterruptedException {
 
 		MasterModuleComm obj = new MasterModuleComm(driver);
 
@@ -66,7 +66,7 @@ public class Common {
 		while (it.hasNext()) {
 
 			String name = (String) it.next();
-			if (name.equals("Vasim")) {
+			if (name.equals(VendorName)) {
 				mylist.get(i).click();
 				break;
 			}
@@ -93,7 +93,7 @@ public class Common {
 
 		String tab[][] = new String[totalrow][totalcol];
 
-		for (int i = 1; i < totalrow + 1; i++, ci++) {
+		for (int i = totalrow; i <=totalrow ; i++,ci++) {
 			cj = 0;
 			for (int j = 0; j < totalcol; j++, cj++) {
 				Cell cell = sheet.getRow(i).getCell(j);
@@ -121,6 +121,7 @@ public class Common {
 		int totalrow = sheet.getLastRowNum();
 
 		int totalcol = sheet.getRow(0).getLastCellNum();
+		XSSFRow rowhead;
 
 		Iterator<Cell> itr;
 
@@ -130,7 +131,7 @@ public class Common {
 		switch (sheetName) {
 		case "CustomerData":
 			// Moving on to the Latest Row to Write Data in that Row.
-			XSSFRow rowhead=sheet.createRow(totalrow+1);
+			 rowhead=sheet.createRow(totalrow+1);
 			
 			for(int i=0;i<=totalcol;i++) {
 				rowhead.createCell(i);
@@ -151,6 +152,19 @@ public class Common {
 			itr.next().setCellValue(df.firstName());
 			itr.next().setCellValue(df.lastName());
 			itr.next().setCellValue(df.lastName()+"@gamil.com");
+		case "Platform":
+			rowhead=sheet.createRow(totalrow+1);
+			
+			for(int i=0;i<=totalcol;i++) {
+				rowhead.createCell(i);
+			}
+			
+			int use1=sheet.getLastRowNum();
+			
+			Row row1=sheet.getRow(use1);
+			itr=row1.cellIterator();
+			itr.next().setCellValue(df.name());
+			itr.next().setCellValue("Microsoft");
 		}
 		input.close();
 		FileOutputStream output = new FileOutputStream(file);
