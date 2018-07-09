@@ -21,7 +21,7 @@ import org.testng.annotations.Test;
 import resources.*;
 
 
-public class Base {
+public class Base{
 
 	Actions action;
 	WebDriver driver;

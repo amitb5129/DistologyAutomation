@@ -2,16 +2,17 @@ package Distology;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
-
 import pageObjectModel.CustomerPage;
 import pageObjectModel.License;
 import pageObjectModel.Platform;
 
-public class AddLicense extends LoginTest {
+public class AddLicense extends LoginTest{
+	WebDriver driver;
 	@Test
 	public void addMasterLicense() throws InterruptedException {
 		driver=DistologyLogin();
@@ -28,7 +29,6 @@ public class AddLicense extends LoginTest {
 		WebDriverWait wait=new WebDriverWait(driver,20);
 		
 		wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("#menu_toggle")));
-		
 		
 		cust.openPanel();
 		

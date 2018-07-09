@@ -9,7 +9,7 @@ import org.testng.annotations.Test;
 import pageObjectModel.Login;
 import resources.*;
 
-public class LoginTest extends Base {
+public class LoginTest extends Base{
 String filename="C:\\Users\\amitb\\TestNG\\Data\\Distology.xlsx";
 String sheetName="TestData";
 

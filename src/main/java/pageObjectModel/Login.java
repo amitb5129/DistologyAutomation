@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-public class Login {
+public class Login{
 	WebDriver driver;
 	
   By username=By.name("username");

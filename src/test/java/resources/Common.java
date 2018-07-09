@@ -28,7 +28,7 @@ import com.github.javafaker.Faker;
 
 import pageObjectModel.MasterModuleComm;
 
-public class Common {
+public class Common{
 
 	public static void TakeScreenshot(WebDriver driver, String Filename) {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
