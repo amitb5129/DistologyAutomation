@@ -1,41 +1,50 @@
 package resources;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.CellType;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.fluttercode.datafactory.impl.DataFactory;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
+
+import com.github.javafaker.Faker;
 
 import pageObjectModel.MasterModuleComm;
 
-public class Common  {
-	
-	
-	
-	public static void TakeScreenshot(WebDriver driver,String Filename) {
+public class Common {
+
+	public static void TakeScreenshot(WebDriver driver, String Filename) {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		
+
 		try {
-			FileUtils.copyFile(scrFile, new File("D:\\SeleniumScreenshot\\"+Filename+".png"));
+			FileUtils.copyFile(scrFile, new File("D:\\SeleniumScreenshot\\" + Filename + ".png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static void dropDown(WebDriver driver) throws InterruptedException {
-		
-		 MasterModuleComm obj =new MasterModuleComm(driver);
-		
+
+		MasterModuleComm obj = new MasterModuleComm(driver);
+
 		// Clicking on Drop Down Menu
 		Actions action = new Actions(driver);
 		action.sendKeys(Keys.TAB).sendKeys(Keys.ENTER).build().perform();
@@ -43,30 +52,112 @@ public class Common  {
 		Thread.sleep(2000);
 
 		List<WebElement> mylist = driver.findElements(obj.getdropdown());
-		
-		int count=mylist.size();
-		
-		List<String> mystring=new ArrayList<String>();
-		
-		for(int i=0;i<count;i++) {
+
+		int count = mylist.size();
+
+		List<String> mystring = new ArrayList<String>();
+
+		for (int i = 0; i < count; i++) {
 			mystring.add(mylist.get(i).getText());
 		}
-		
-		Iterator it=mystring.iterator();
-		int i=0;
-		while(it.hasNext()) {
-		
-			String name=(String) it.next();
-			if(name.equals("Vasim")) {
-			mylist.get(i).click();
+
+		Iterator it = mystring.iterator();
+		int i = 0;
+		while (it.hasNext()) {
+
+			String name = (String) it.next();
+			if (name.equals("Vasim")) {
+				mylist.get(i).click();
 				break;
 			}
 			i++;
 		}
 	}
 
+	public static Object[][] data(String filename, String sheetName) throws IOException {
+		int ci = 0, cj = 0;
 
-	
-	
+		File file = new File(filename);
+
+		FileInputStream input = new FileInputStream(file);
+
+		XSSFWorkbook work = new XSSFWorkbook(input);
+
+		XSSFSheet sheet = work.getSheet(sheetName);
+
+		int totalrow = sheet.getLastRowNum();
+
+		int totalcol = sheet.getRow(1).getLastCellNum();
+
+		System.out.println(totalrow + "The Total column count is:" + totalcol);
+
+		String tab[][] = new String[totalrow][totalcol];
+
+		for (int i = 1; i < totalrow + 1; i++, ci++) {
+			cj = 0;
+			for (int j = 0; j < totalcol; j++, cj++) {
+				Cell cell = sheet.getRow(i).getCell(j);
+				CellType type = cell.getCellTypeEnum();
+				if (type == CellType.NUMERIC) {
+					cell.setCellType(CellType.STRING);
+				}
+				tab[ci][cj] = cell.getStringCellValue();
+
+			}
+		}
+		return tab;
+
+	}
+
+	public static void writeDatatoExcel(String filename, String sheetName) throws IOException {
+		File file = new File(filename);
+
+		FileInputStream input = new FileInputStream(file);
+
+		XSSFWorkbook work = new XSSFWorkbook(input);
+
+		XSSFSheet sheet = work.getSheet(sheetName);
+
+		int totalrow = sheet.getLastRowNum();
+
+		int totalcol = sheet.getRow(0).getLastCellNum();
+
+		Iterator<Cell> itr;
+
+		Faker df = new Faker();
+		Random r=new Random();
+
+		switch (sheetName) {
+		case "CustomerData":
+			// Moving on to the Latest Row to Write Data in that Row.
+			XSSFRow rowhead=sheet.createRow(totalrow+1);
+			
+			for(int i=0;i<=totalcol;i++) {
+				rowhead.createCell(i);
+			}
+			
+			int use=sheet.getLastRowNum();
+			
+			Row row=sheet.getRow(use);
+			
+			
+			// Iterating through all the Cells in the Last Row.
+			itr = row.cellIterator();
+			itr.next().setCellValue(df.name());
+			itr.next().setCellValue(df.sentence(5));
+			itr.next().setCellValue(r.toString());
+			itr.next().setCellValue(df.phoneNumber());
+			itr.next().setCellValue(df.name());
+			itr.next().setCellValue(df.firstName());
+			itr.next().setCellValue(df.lastName());
+			itr.next().setCellValue(df.lastName()+"@gamil.com");
+		}
+		input.close();
+		FileOutputStream output = new FileOutputStream(file);
+		work.write(output);
+		output.close();
+		
+
+	}
 
 }

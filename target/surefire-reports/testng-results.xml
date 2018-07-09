@@ -2,44 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="1" total="7" passed="6">
   <reporter-output>
   </reporter-output>
-  <suite name="Distology" duration-ms="167549" started-at="2018-06-07T07:03:59Z" finished-at="2018-06-07T07:06:46Z">
+  <suite name="Distology" duration-ms="183561" started-at="2018-07-06T07:07:54Z" finished-at="2018-07-06T07:10:58Z">
     <groups>
       <group name="Navigate">
-        <method signature="customerNavigate.customerNavigate()[pri:0, instance:Distology.customerNavigate@6293abcc]" name="customerNavigate" class="Distology.customerNavigate"/>
+        <method signature="customerNavigate.customerNavigate()[pri:0, instance:Distology.customerNavigate@2a32de6c]" name="customerNavigate" class="Distology.customerNavigate"/>
       </group> <!-- Navigate -->
       <group name="validation">
-        <method signature="customerNavigate.customerValidations()[pri:0, instance:Distology.customerNavigate@6293abcc]" name="customerValidations" class="Distology.customerNavigate"/>
+        <method signature="customerNavigate.customerValidations()[pri:0, instance:Distology.customerNavigate@2a32de6c]" name="customerValidations" class="Distology.customerNavigate"/>
       </group> <!-- validation -->
     </groups>
-    <test name="Test" duration-ms="167549" started-at="2018-06-07T07:03:59Z" finished-at="2018-06-07T07:06:46Z">
-      <class name="Distology.AddLicense">
-        <test-method status="PASS" signature="addMasterLicense()[pri:0, instance:Distology.AddLicense@f8c1ddd]" name="addMasterLicense" duration-ms="38054" started-at="2018-06-07T07:06:08Z" finished-at="2018-06-07T07:06:46Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- addMasterLicense -->
-      </class> <!-- Distology.AddLicense -->
+    <test name="Test" duration-ms="183561" started-at="2018-07-06T07:07:54Z" finished-at="2018-07-06T07:10:58Z">
       <class name="Distology.AddPlatform">
-        <test-method status="PASS" signature="addMasterPlatform()[pri:0, instance:Distology.AddPlatform@7fc2413d]" name="addMasterPlatform" duration-ms="66246" started-at="2018-06-07T07:05:02Z" finished-at="2018-06-07T07:06:08Z">
+        <test-method status="PASS" signature="addMasterPlatform()[pri:0, instance:Distology.AddPlatform@75f32542]" name="addMasterPlatform" duration-ms="48248" started-at="2018-07-06T07:09:14Z" finished-at="2018-07-06T07:10:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- addMasterPlatform -->
       </class> <!-- Distology.AddPlatform -->
+      <class name="Distology.AddLicense">
+        <test-method status="PASS" signature="addMasterLicense()[pri:0, instance:Distology.AddLicense@7f1302d6]" name="addMasterLicense" duration-ms="55580" started-at="2018-07-06T07:10:02Z" finished-at="2018-07-06T07:10:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addMasterLicense -->
+      </class> <!-- Distology.AddLicense -->
       <class name="Distology.customerNavigate">
-        <test-method status="PASS" signature="customerNavigate()[pri:0, instance:Distology.customerNavigate@6293abcc]" name="customerNavigate" duration-ms="31637" started-at="2018-06-07T07:03:59Z" finished-at="2018-06-07T07:04:30Z">
+        <test-method status="PASS" signature="customerNavigate()[pri:0, instance:Distology.customerNavigate@2a32de6c]" name="customerNavigate" duration-ms="36302" started-at="2018-07-06T07:07:54Z" finished-at="2018-07-06T07:08:31Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- customerNavigate -->
-        <test-method status="PASS" signature="customerValidations()[pri:0, instance:Distology.customerNavigate@6293abcc]" name="customerValidations" duration-ms="3089" started-at="2018-06-07T07:04:30Z" depends-on-methods="Distology.customerNavigate.customerNavigate" finished-at="2018-06-07T07:04:33Z">
+        <test-method status="PASS" signature="customerValidations()[pri:0, instance:Distology.customerNavigate@2a32de6c]" name="customerValidations" duration-ms="1757" started-at="2018-07-06T07:08:31Z" depends-on-methods="Distology.customerNavigate.customerNavigate" finished-at="2018-07-06T07:08:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- customerValidations -->
       </class> <!-- Distology.customerNavigate -->
       <class name="Distology.VendorNavigate">
-        <test-method status="PASS" signature="vendorNavigate()[pri:0, instance:Distology.VendorNavigate@7995092a]" name="vendorNavigate" duration-ms="26430" started-at="2018-06-07T07:04:33Z" finished-at="2018-06-07T07:05:00Z">
+        <test-method status="PASS" signature="vendorNavigate()[pri:0, instance:Distology.VendorNavigate@7692d9cc]" name="vendorNavigate" duration-ms="39628" started-at="2018-07-06T07:08:32Z" finished-at="2018-07-06T07:09:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- vendorNavigate -->
-        <test-method status="PASS" signature="getVendor()[pri:0, instance:Distology.VendorNavigate@7995092a]" name="getVendor" duration-ms="2050" started-at="2018-06-07T07:05:00Z" depends-on-methods="Distology.VendorNavigate.vendorNavigate" finished-at="2018-06-07T07:05:02Z">
+        <test-method status="PASS" signature="getVendor()[pri:0, instance:Distology.VendorNavigate@7692d9cc]" name="getVendor" duration-ms="2012" started-at="2018-07-06T07:09:12Z" depends-on-methods="Distology.VendorNavigate.vendorNavigate" finished-at="2018-07-06T07:09:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- getVendor -->

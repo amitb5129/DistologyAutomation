@@ -59,9 +59,11 @@ Logger log=LogManager.getLogger(Base.class.getClass());
 		}
         //Giving the Global Timeout which will be applied to all Test Cases.
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+		
 		action = new Actions(driver);
 		driver.get(prop.getProperty("URL"));
 		driver.manage().window().maximize();
+	
 		return driver;
 
 	}

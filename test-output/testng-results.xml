@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="26473" started-at="2018-06-06T14:23:35Z" finished-at="2018-06-06T14:24:01Z">
+  <suite name="Default suite" duration-ms="1196" started-at="2018-07-06T14:17:44Z" finished-at="2018-07-06T14:17:45Z">
     <groups>
-      <group name="Navigate">
-        <method signature="customerNavigate.customerNavigate()[pri:0, instance:Distology.customerNavigate@1d119efb]" name="customerNavigate" class="Distology.customerNavigate"/>
-      </group> <!-- Navigate -->
-      <group name="validation">
-        <method signature="customerNavigate.customerValidations()[pri:0, instance:Distology.customerNavigate@1d119efb]" name="customerValidations" class="Distology.customerNavigate"/>
-      </group> <!-- validation -->
     </groups>
-    <test name="Default test" duration-ms="26473" started-at="2018-06-06T14:23:35Z" finished-at="2018-06-06T14:24:01Z">
-      <class name="Distology.customerNavigate">
-        <test-method status="PASS" signature="customerNavigate()[pri:0, instance:Distology.customerNavigate@1d119efb]" name="customerNavigate" duration-ms="23466" started-at="2018-06-06T14:23:35Z" finished-at="2018-06-06T14:23:58Z">
+    <test name="Default test" duration-ms="1196" started-at="2018-07-06T14:17:44Z" finished-at="2018-07-06T14:17:45Z">
+      <class name="Distology.Just">
+        <test-method status="PASS" signature="writeData()[pri:0, instance:Distology.Just@91161c7]" name="writeData" duration-ms="1159" started-at="2018-07-06T14:17:44Z" finished-at="2018-07-06T14:17:45Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- customerNavigate -->
-        <test-method status="PASS" signature="customerValidations()[pri:0, instance:Distology.customerNavigate@1d119efb]" name="customerValidations" duration-ms="2897" started-at="2018-06-06T14:23:58Z" depends-on-methods="Distology.customerNavigate.customerNavigate" finished-at="2018-06-06T14:24:01Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- customerValidations -->
-      </class> <!-- Distology.customerNavigate -->
+        </test-method> <!-- writeData -->
+      </class> <!-- Distology.Just -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
