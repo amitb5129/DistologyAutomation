@@ -95,6 +95,7 @@ public class AddPlatform extends LoginTest {
 	@DataProvider(name = "PlatformData")
 	public Object[][] getdata() throws IOException {
 		Object[][] tab = Common.data(filename, sheetName);
+		System.out.println(tab.length);
 		return tab;
 	}
 

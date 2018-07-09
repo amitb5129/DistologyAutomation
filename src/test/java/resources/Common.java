@@ -146,7 +146,7 @@ public class Common{
 			itr = row.cellIterator();
 			itr.next().setCellValue(df.name());
 			itr.next().setCellValue(df.sentence(5));
-			itr.next().setCellValue(r.toString());
+			itr.next().setCellValue(df.name());
 			itr.next().setCellValue(df.phoneNumber());
 			itr.next().setCellValue(df.name());
 			itr.next().setCellValue(df.firstName());

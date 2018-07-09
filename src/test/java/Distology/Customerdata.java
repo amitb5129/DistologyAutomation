@@ -41,6 +41,9 @@ public class Customerdata extends LoginTest {
 
 		CustomerPage cust1 = new CustomerPage(driver);
 		Customercreate cust = new Customercreate(driver);
+		
+		//Creating the Customer Data by Calling the Write Function.
+		Common.writeDatatoExcel(filename, sheetName);
 
 		// Clicking on Menu Panel Icon
 		By icon = cust1.openPanel();
@@ -104,10 +107,6 @@ public class Customerdata extends LoginTest {
 
 	}
 	
-	@Test
-	public void verifyAddedCustomer() {
-		
-	}
 
 	@DataProvider(name = "CustomerData")
 	public Object[][] getdata() throws IOException {
