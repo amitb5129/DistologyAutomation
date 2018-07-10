@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Distology.Just">
+      <class name="Distology.Customerdata">
         <methods>
-          <include name="writeData"/>
+          <include name="createCustomer"/>
         </methods>
-      </class> <!-- Distology.Just -->
+      </class> <!-- Distology.Customerdata -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

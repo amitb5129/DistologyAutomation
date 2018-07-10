@@ -90,7 +90,9 @@ public class Common{
 
 		System.out.println(totalrow + " The Total column count is:" + totalcol);
 
-		String tab[][] = new String[totalrow][totalcol];
+		String tab[][] = new String[1][totalcol];
+		
+		System.out.println(tab.length);
 
 		for (int i = totalrow-1; i <=totalrow-1 ; i++) {
 			
