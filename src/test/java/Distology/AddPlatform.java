@@ -3,12 +3,9 @@ package Distology;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -67,10 +64,10 @@ public class AddPlatform extends LoginTest {
 
 		// Clicking on Platform Tab.
 		form.clickModule();
-		
-		//Calling the WriteData Method to write some Data.
+
+		// Calling the WriteData Method to write some Data.
 		try {
-			Common.writeDatatoExcel(filename,sheetName);
+			Common.writeDatatoExcel(filename, sheetName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
