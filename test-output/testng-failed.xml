@@ -5,7 +5,7 @@
     <classes>
       <class name="Distology.Customerdata">
         <methods>
-          <include name="createCustomer"/>
+          <include name="createCustomer" invocation-numbers="0"/>
         </methods>
       </class> <!-- Distology.Customerdata -->
     </classes>

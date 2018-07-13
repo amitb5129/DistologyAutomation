@@ -75,7 +75,7 @@ public class Customerdata extends LoginTest {
 		By searchfield = cust.search();
 
 		// Selecting value from the Drop Down of a Particular Industry.
-		driver.findElement(searchfield).sendKeys(value(), Keys.ENTER);
+		driver.findElement(searchfield).sendKeys(value(), Keys.chord(Keys.ENTER));
 
 		// Entering data for Website.
 		By websitedata = cust.website();

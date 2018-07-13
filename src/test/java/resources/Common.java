@@ -22,6 +22,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import com.github.javafaker.Faker;
@@ -146,8 +147,8 @@ public class Common{
 			// Iterating through all the Cells in the Last Row.
 			itr = row.cellIterator();
 			itr.next().setCellValue(df.getName());
-			itr.next().setCellValue(df.getRandomChars(5));
-			itr.next().setCellValue(df.getName());
+			itr.next().setCellValue("Academic");
+			itr.next().setCellValue(df.getRandomChars(8)+".com");
 			itr.next().setCellValue(df.getNumberText(10));
 			itr.next().setCellValue(df.getName());
 			itr.next().setCellValue(df.getFirstName());
