@@ -1,14 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Distology]">
-  <test thread-count="5" name="Test(failed)">
+<suite thread-count="2" guice-stage="DEVELOPMENT" name="Failed suite [Distology]" parallel="tests">
+  <parameter name="VendorName" value="Vasim5"/>
+  <test thread-count="2" name="Amit1(failed)" parallel="tests">
     <classes>
-      <class name="Distology.Customer">
+      <class name="Distology.Customerdata">
         <methods>
-          <include name="customerCreate"/>
-          <include name="initialize"/>
+          <include name="createCustomer" invocation-numbers="0"/>
         </methods>
-      </class> <!-- Distology.Customer -->
+      </class> <!-- Distology.Customerdata -->
+      <class name="Distology.AddLicense">
+        <methods>
+          <include name="addMasterLicense"/>
+        </methods>
+      </class> <!-- Distology.AddLicense -->
+      <class name="Distology.AddPlatform">
+        <methods>
+          <include name="addMasterPlatform" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Distology.AddPlatform -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Amit1(failed) -->
 </suite> <!-- Failed suite [Distology] -->

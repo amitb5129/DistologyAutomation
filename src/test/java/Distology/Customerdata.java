@@ -46,8 +46,7 @@ public class Customerdata extends LoginTest {
 		Common.writeDatatoExcel(filename, sheetName);
 
 		// Clicking on Menu Panel Icon
-		By icon = cust1.openPanel();
-		driver.findElement(icon).click();
+		cust1.openPanel().click();
 
 		// Clicking on the Customer Module Tab.
 		By customerTab = cust1.customerModule();
@@ -111,7 +110,6 @@ public class Customerdata extends LoginTest {
 	@DataProvider(name = "CustomerData")
 	public Object[][] getdata() throws IOException {
 		Object[][] tab = Common.data(filename, sheetName);
-		System.out.println(tab.length);
 		return tab;
 	}
 

@@ -2,6 +2,7 @@ package pageObjectModel;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 public class CustomerPage {
@@ -22,8 +23,8 @@ public class CustomerPage {
 	
 
 	
-	public By openPanel() {
-		return icon;
+	public WebElement openPanel() {
+		return driver.findElement(icon);
 	}
 	
 	public By customerModule() {

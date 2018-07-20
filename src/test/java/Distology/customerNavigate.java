@@ -25,9 +25,7 @@ public class customerNavigate extends LoginTest {
 
 			cust = new CustomerPage(driver);
 
-			By icon = cust.openPanel();
-
-			driver.findElement(icon).click();
+			cust.openPanel().click();
 
 			By customerTab = cust.customerModule();
 

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20801" started-at="2018-07-13T07:52:39Z" finished-at="2018-07-13T07:53:00Z">
+  <suite name="Default suite" duration-ms="41644" started-at="2018-07-20T10:13:15Z" finished-at="2018-07-20T10:13:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20801" started-at="2018-07-13T07:52:39Z" finished-at="2018-07-13T07:53:00Z">
+    <test name="Default test" duration-ms="41644" started-at="2018-07-20T10:13:15Z" finished-at="2018-07-20T10:13:56Z">
       <class name="Distology.Customerdata">
-        <test-method status="PASS" signature="createCustomer([Ljava.lang.String;)[pri:0, instance:Distology.Customerdata@5542c4ed]" name="createCustomer" duration-ms="19948" started-at="2018-07-13T07:52:40Z" data-provider="CustomerData" finished-at="2018-07-13T07:53:00Z">
+        <test-method status="PASS" signature="createCustomer([Ljava.lang.String;)[pri:0, instance:Distology.Customerdata@5542c4ed]" name="createCustomer" duration-ms="40771" started-at="2018-07-20T10:13:16Z" data-provider="CustomerData" finished-at="2018-07-20T10:13:56Z">
           <params>
             <param index="0">
               <value>
