@@ -4,12 +4,10 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -17,13 +15,14 @@ import pageObjectModel.CustomerPage;
 import pageObjectModel.Customercreate;
 import resources.Common;
 
-public class Customerdata extends LoginTest {
+public class Customerdata {
 
 	
-	String filename = "C:\\Users\\amitb\\Documents\\Distology.xlsx";
+	String filename = "D:\\Data\\Distology.xlsx";
 	String sheetName = "CustomerData";
 	ArrayList<String> customer;
 	Iterator it;
+	WebDriver driver;
 
 	public String value() {
 		String value = (String) it.next();
@@ -37,7 +36,8 @@ public class Customerdata extends LoginTest {
 		it = customer.iterator();
 
 		// Calling the Base Class and calling the Login Script.
-		driver = DistologyLogin();
+		//driver = DistologyLogin();
+		this.driver=Base.driver;
 
 		CustomerPage cust1 = new CustomerPage(driver);
 		Customercreate cust = new Customercreate(driver);

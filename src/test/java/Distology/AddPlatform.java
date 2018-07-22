@@ -6,6 +6,7 @@ import java.util.Iterator;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,12 +21,14 @@ public class AddPlatform extends LoginTest {
 
 	ArrayList<String> platform;
 	Iterator it;
-	String filename = "C:\\Users\\amitb\\Documents\\Distology.xlsx";
+	String filename = "D:\\Data\\Distology.xlsx";
 	String sheetName = "Platform";
+	WebDriver driver;
 
 	@Test(dataProvider = "PlatformData")
 	public void addMasterPlatform(String PlatformName, String VendorName) throws InterruptedException {
-		driver = DistologyLogin();
+		//driver = DistologyLogin();
+		this.driver=Base.driver;
 
 		// Creating an ArrayList to store all Platform Data.
 		platform = new ArrayList<>();
@@ -56,10 +59,10 @@ public class AddPlatform extends LoginTest {
 
 		// Entering Data into the Excel Sheet.
 		try {
-			Common.writeDatatoExcel("", "Platform.xlsx");
+			Common.writeDatatoExcel(filename, sheetName);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println("File Not Found Exception is being thrown..!!!!");
 		}
 
 		// Clicking on Platform Tab.
@@ -92,7 +95,7 @@ public class AddPlatform extends LoginTest {
 	@DataProvider(name = "PlatformData")
 	public Object[][] getdata() throws IOException {
 		Object[][] tab = Common.data(filename, sheetName);
-		System.out.println(tab.length);
+		//System.out.println(tab.length);
 		return tab;
 	}
 

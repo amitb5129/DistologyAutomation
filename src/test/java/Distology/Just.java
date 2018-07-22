@@ -11,7 +11,7 @@ public class Just {
 	@Test
 	public void writeData() throws IOException {
 
-		String filename = "C:\\Users\\amitb\\Documents\\Distology.xlsx";
+		String filename = "C:\\Users\\Amit Baghel\\DistologyAutomation\\src\\test\\java\\resources\\DataDriven.properties";
 		String sheetName = "CustomerData";
 		Common.writeDatatoExcel(filename,sheetName);
 		Object[][] arr=Common.data(filename, sheetName);

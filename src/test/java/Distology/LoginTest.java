@@ -10,21 +10,23 @@ import org.testng.annotations.Test;
 import pageObjectModel.Login;
 import resources.*;
 
-public class LoginTest extends Base{
-String filename="C:\\Users\\amitb\\TestNG\\Data\\Distology.xlsx";
-String sheetName="TestData";
+public class LoginTest extends Base {
+	String filename = "C:\\Users\\amitb\\TestNG\\Data\\Distology.xlsx";
+	String sheetName = "TestData";
 
 	@Test
 	public WebDriver DistologyLogin() {
 		try {
-			driver=initialize();
+			driver = initialize();
 			Login log = new Login(driver);
 			String Un = prop.getProperty("UN");
 			String Pass = prop.getProperty("Pass");
 			log.enterUN(Un);
 			log.enterPass(Pass);
 			log.clickSubmit();
-			
+
+			System.out.println(driver.getCurrentUrl());
+
 		} catch (Exception e) {
 			e.printStackTrace();
 			return driver;
@@ -32,6 +34,5 @@ String sheetName="TestData";
 		return driver;
 
 	}
-	
 
 }

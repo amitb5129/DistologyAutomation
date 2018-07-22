@@ -12,12 +12,14 @@ import pageObjectModel.CustomerPage;
 import pageObjectModel.License;
 import pageObjectModel.Platform;
 
-public class AddLicense extends LoginTest{
+public class AddLicense {
 	WebDriver driver;
+	Actions action;
 	@Test
 	public void addMasterLicense() throws InterruptedException {
-		driver=DistologyLogin();
-		
+		//driver=DistologyLogin();
+		this.driver=Base.driver;
+		this.action=Base.action;
 		//Calling the Constructor of the License Class
 		License lic=new License(driver);
 		

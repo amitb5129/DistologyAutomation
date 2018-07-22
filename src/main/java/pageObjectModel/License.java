@@ -1,12 +1,15 @@
 package pageObjectModel;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import resources.Common;
 
+import resources.Common;
 
-public class License extends MasterModuleComm{
+public class License extends MasterModuleComm {
 	WebDriver driver;
 
 	By license = By.xpath("//span[contains(text(),'License')]");
@@ -28,7 +31,7 @@ public class License extends MasterModuleComm{
 		driver.findElement(enterLicenseField).sendKeys("NewLicense");
 
 		// Calling the Common DropDown Method to actually Select a Vendor.
-		Common.dropDown(driver,"Vasim");
+		Common.dropDown(driver, "Vasim");
 	}
 
 }

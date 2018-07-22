@@ -61,7 +61,7 @@ public class customerNavigate extends LoginTest {
 			By submitbutton=cust.verifyErrorMessages();
 			driver.findElement(submitbutton).click();
 			Common.TakeScreenshot(driver, Filename);
-			driver.close();
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

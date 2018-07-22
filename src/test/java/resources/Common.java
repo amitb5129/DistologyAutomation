@@ -29,13 +29,13 @@ import com.github.javafaker.Faker;
 
 import pageObjectModel.MasterModuleComm;
 
-public class Common{
+public class Common {
 
 	public static void TakeScreenshot(WebDriver driver, String Filename) {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 		try {
-			FileUtils.copyFile(scrFile, new File("D:\\SeleniumScreenshot\\" + Filename + ".png"));
+			FileUtils.copyFile(scrFile, new File("D:\\SeleniumScreenshots" + Filename + ".png"));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -89,11 +89,11 @@ public class Common{
 
 		int totalcol = sheet.getRow(0).getLastCellNum();
 
-		System.out.println(totalrow + " The Total column count is:" + totalcol);
+		//System.out.println(totalrow + " The Total column count is:" + totalcol);
 
 		String tab[][] = new String[1][totalcol];
 		
-		System.out.println(tab.length);
+		//System.out.println(tab.length);
 
 		for (int i = totalrow-1; i <=totalrow-1 ; i++) {
 			

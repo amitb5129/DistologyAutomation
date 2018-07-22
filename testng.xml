@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-
-<suite name="Distology" >
+<suite name="Distology">
 	<parameter name="VendorName" value="Vasim5" />
-	<test name="AMit" >
+
+	<listeners>
+		<listener class-name="Distology.Listeners" />
+	</listeners>
+	<parameter name="VendorName" value="Vasim5" />
+	<test name="Test">
 		<classes>
 			<class name="Distology.customerNavigate" />
 			<class name="Distology.VendorNavigate" />
-		</classes>
-	</test>
-	<test name="Amit1" >
-		<classes>
+
 			<class name="Distology.Customerdata" />
 			<class name="Distology.AddPlatform" />
 			<class name="Distology.AddLicense" />

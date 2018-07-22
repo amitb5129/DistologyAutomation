@@ -1,31 +1,26 @@
 package Distology;
 
-import static org.testng.Assert.assertEquals;
-
-import java.io.IOException;
-import java.util.Iterator;
-import java.util.List;
-
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import pageObjectModel.CustomerPage;
 import pageObjectModel.VendorPage;
 
-public class VendorNavigate extends LoginTest {
+public class VendorNavigate {
 	VendorPage vendor;
 	WebDriverWait wait;
+	WebDriver driver;
 	
 	@Test
 	public void vendorNavigate() {
 		try {
-			driver=DistologyLogin();
+			//driver=DistologyLogin();
+			this.driver=Base.driver;
 			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
